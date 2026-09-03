@@ -1,0 +1,127 @@
+#head {
+    display: inline-block;
+    width: 70vmin;
+    background-color: fuchsia;
+    padding: 15px 40px;
+    margin-top: 30px;
+    border-radius: 30px;
+    border: none;
+    color: white;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #DCAB6B;
+    text-align: center;
+}
+
+.container {
+    height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-wrapper {
+    position: relative;
+    display: inline-block;
+    height: 60vmin;
+    width: 60vmin;
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+}
+
+.box {
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1rem;
+    border: none;
+    font-size: 8vmin;
+    color: #E2E2E2;
+    background-color: #247BA0;
+    position: relative;
+    z-index: 1;
+}
+
+/* ✅ FIXED: Correct ID matching HTML */
+#winning-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+    display: none;
+}
+
+#winning-line line {
+    stroke: #FFD700;
+    stroke-width: 6;
+    stroke-linecap: round;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+}
+
+@keyframes drawLine {
+    from {
+        stroke-dashoffset: 500;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+#winning-line.show {
+    display: block;
+}
+
+#winning-line.show line {
+    animation: drawLine 0.6s ease forwards;
+}
+
+#reset {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: black;
+    color: white;
+    border-radius: 1rem;
+    border: none;
+}
+
+#new-btn {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: black;
+    color: white;
+    border-radius: 1rem;
+    border: none;
+    margin-top: 30px;
+}
+
+#msg {
+    color: #E2E2E2;
+    font-size: 5vmin;
+}
+
+.msg-container {
+    height: 20vmin;
+}
+
+.hide {
+    display: none;
+}
